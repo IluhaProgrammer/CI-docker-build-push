@@ -36,10 +36,5 @@ jobs:
                 push: true
                 platforms: linux/amd64,linux/arm64
                 tags: ghcr.io/${{ github.repository_owner }}/my-app:latest
-                cache-from: |
-                    type=registry, 
-                    ref=ghcr.io/${{ github.repository_owner }}/my-app:buildcache
-                cache-to: |
-                    type=registry, 
-                    mode=max,
-                    ref=ghcr.io/${{ github.repository_owner }}/my-app:buildcache
+                cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/my-app:buildcache
+                cache-to: type=registry,mode=max,ref=ghcr.io/${{ github.repository_owner }}/my-app:buildcache
